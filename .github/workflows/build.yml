@@ -8,7 +8,7 @@ on:
 
 env:
   IMAGE_NAME: mileschou/phalcon
-  PHALCON_VERSION: 5.4
+  PHALCON_VERSION: 5.4.0
 
 jobs:
   build:
