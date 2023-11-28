@@ -7,7 +7,7 @@ on:
       - master
 
 env:
-  IMAGE_NAME: mileschou/phalcon
+  IMAGE_NAME: huanghuibin/phalcon
   PHALCON_VERSION: 5.4.0
 
 jobs:
