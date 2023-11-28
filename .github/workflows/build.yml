@@ -19,7 +19,7 @@ jobs:
       matrix:
         php:
           - 8.2
-          - 8.1
+
         variant:
           - "" # cli
           - -fpm
