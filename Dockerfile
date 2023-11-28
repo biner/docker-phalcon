@@ -4,7 +4,7 @@ FROM php:${PHP_VARIANT}
 
 LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
-ARG PHALCON_VERSION=5.0.4
+ARG PHALCON_VERSION=5.4.0
 
 RUN set -xe && \
         docker-php-source extract && \
