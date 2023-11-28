@@ -2,7 +2,7 @@ ARG PHP_VARIANT=8.2
 
 FROM php:${PHP_VARIANT}
 
-ARG PHALCON_VERSION=5.0.4
+ARG PHALCON_VERSION=5.4.0
 
 LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
