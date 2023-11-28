@@ -22,9 +22,6 @@ RUN set -xe && \
 
 COPY docker-phalcon-* /usr/local/bin/
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
-
-
 # Install PHP extensions
 RUN docker-php-ext-install \
       # gettext \
