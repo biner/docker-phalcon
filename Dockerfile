@@ -21,3 +21,25 @@ RUN set -xe && \
         php -m
 
 COPY docker-phalcon-* /usr/local/bin/
+
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+
+
+# Install PHP extensions
+RUN docker-php-ext-install \
+      # gettext \
+      pdo_mysql 
+
+# # Install PHP extensions
+# RUN docker-php-ext-enable \
+#       opcache \
+#       phalcon 
+
+# Install  composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
+    php -r "unlink('composer-setup.php');" && \
+    composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+    
+# Install  phalcon devtools
+RUN docker-phalcon-install-devtools 
