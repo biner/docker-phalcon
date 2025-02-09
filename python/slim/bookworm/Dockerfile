@@ -14,9 +14,9 @@ RUN apt-get update
 # RUN apt-get install gcc-multilib build-essential -y
 
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-RUN curl -LO  https://github.com/ta-lib/ta-lib/releases/download/v0.6.4/ta-lib_0.6.4_amd64.deb
-RUN dpkg -i ta-lib_0.6.4_amd64.deb
-RUN rm ta-lib_0.6.4_amd64.deb
+ADD https://github.com/ta-lib/ta-lib/releases/download/v0.6.4/ta-lib_0.6.4_amd64.deb /tmp/
+
+RUN dpkg -i /tmp/ta-lib_0.6.4_amd64.deb
 
 # RUN pip install --upgrade pip 
 # 安装talib底层包
