@@ -1,10 +1,6 @@
 name: ci
 
-on:
-  pull_request:
-  push:
-    branches:
-      - master
+
 
 env:
   IMAGE_NAME: huanghuibin/phalcon
