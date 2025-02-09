@@ -1,7 +1,6 @@
 name: php
 
-on:
-  pull_request:
+on: workflow_dispatch
 
 env:
   IMAGE_NAME: php
