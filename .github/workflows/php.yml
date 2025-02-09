@@ -27,18 +27,6 @@ jobs:
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      -
-        name: Build
-        uses: docker/build-push-action@v5
-        with:
-          load: true
-          file: Dockerfile-${{ env.IMAGE_NAME }}-${{ matrix.variant }}-${{ matrix.os }}
-          build-args: |
-            IMAGE_VARIANT=${{ env.IMAGE_VARIANT }}
-          tags: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_VARIANT }}-tesing
-      -
-        name: Test
-        run: docker run --rm ${{ env.IMAGE_NAME }}:${{ env.IMAGE_VARIANT }}-tesing sh -c "php -v; php --ri phalcon | grep -i ^version"
 
       -
         name: Login
@@ -53,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          file: Dockerfile-${{ env.IMAGE_NAME }}-${{ matrix.variant }}-${{ matrix.os }}
+          file: ${{ env.IMAGE_NAME }}/${{ matrix.variant }}/${{ matrix.os }}/Dockerfile
           build-args: |
             IMAGE_VARIANT=${{ env.IMAGE_VARIANT }}
             platforms: linux/amd64,linux/arm64
