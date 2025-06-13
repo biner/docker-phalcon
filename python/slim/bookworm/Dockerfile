@@ -22,7 +22,7 @@ RUN dpkg -i /tmp/ta-lib_0.6.4_amd64.deb
 # 安装talib底层包
 # RUN bash talib.sh
 # # RUN pip install -r requirements.txt
-RUN apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
+RUN apt-get purge procps openssh-server -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
 RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get clean
 
