@@ -11,7 +11,7 @@ RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debi
 
 RUN apt-get update 
 
-# RUN apt-get install gcc-multilib build-essential -y
+RUN apt-get install procps openssh-server -y
 
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ADD https://github.com/ta-lib/ta-lib/releases/download/v0.6.4/ta-lib_0.6.4_amd64.deb /tmp/
@@ -22,7 +22,7 @@ RUN dpkg -i /tmp/ta-lib_0.6.4_amd64.deb
 # 安装talib底层包
 # RUN bash talib.sh
 # # RUN pip install -r requirements.txt
-RUN apt-get purge procps openssh-server -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
+RUN apt-get purge  -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
 RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get clean
 
