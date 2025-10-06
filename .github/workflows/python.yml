@@ -43,4 +43,4 @@ jobs:
           build-args: |
             IMAGE_VARIANT=${{ env.IMAGE_VARIANT }}
             platforms: linux/amd64,linux/arm64
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_VARIANT }}-${{ matrix.os }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_VARIANT }}
