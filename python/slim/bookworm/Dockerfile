@@ -1,5 +1,5 @@
 # 基于 python:3.12.2-slim-bullseye 镜像  
-FROM python:slim-bookworm
+FROM python:slim-trixie
 
 # RUN mkdir -p /root/.ssh
 # COPY authorized_keys /root/.ssh/authorized_keys
@@ -11,7 +11,7 @@ RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debi
 
 RUN apt-get update 
 
-RUN apt-get install procps openssh-server -y
+RUN apt-get install procps openssh-server libpq-dev -y
 
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ADD https://github.com/ta-lib/ta-lib/releases/download/v0.6.4/ta-lib_0.6.4_amd64.deb /tmp/
