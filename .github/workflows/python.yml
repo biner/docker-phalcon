@@ -16,7 +16,6 @@ jobs:
         variant:
           - slim
         os:
-          - bookworm
           - trixie
     env:
       IMAGE_VARIANT: ${{ matrix.variant }}-${{ matrix.os }}
