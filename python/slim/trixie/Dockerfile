@@ -1,5 +1,5 @@
 # 基于 python:3.12.2-slim-bullseye 镜像  
-FROM python:slim-trixie
+FROM python:3.13-slim-trixie
 
 # RUN mkdir -p /root/.ssh
 # COPY authorized_keys /root/.ssh/authorized_keys
